@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event - D-EVENT</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/micro-interactions.css">
+</head>
+<body class="loading">
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container-wide">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="logo-icon">🎯</span>
+                    <h1>D-EVENT</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="event-list.html" class="nav-link">Events</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="registrations.html" class="nav-link">Registrations</a></li>
+                    <li><a href="event-form.html" class="btn-nav active">+ Create Event</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container-wide">
+            <div class="page-header-content">
+                <h1 class="page-title" id="formTitle">Create New Event</h1>
+                <p class="page-subtitle">Fill in the details below to create your event</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container-modern">
+                <form id="eventForm">
+                    <div class="form-section-group">
+                        <h3 class="form-section-title">📋 Basic Information</h3>
+                        
+                        <div class="form-group">
+                            <label for="title">Event Title *</label>
+                            <input type="text" 
+                                   id="title" 
+                                   name="title" 
+                                   class="form-control" 
+                                   placeholder="e.g., Tech Innovation Summit 2024"
+                                   required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Event Date *</label>
+                                <input type="date" 
+                                       id="date" 
+                                       name="date" 
+                                       class="form-control"
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="category">Category *</label>
+                                <select id="category" name="category" class="form-control" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Conference">Conference</option>
+                                    <option value="Workshop">Workshop</option>
+                                    <option value="Concert">Concert</option>
+                                    <option value="Festival">Festival</option>
+                                    <option value="Seminar">Seminar</option>
+                                    <option value="Exhibition">Exhibition</option>
+                                    <option value="Sports">Sports</option>
+                                    <option value="Theater">Theater</option>
+                                    <option value="Networking">Networking</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Event Description *</label>
+                            <textarea id="description" 
+                                      name="description" 
+                                      class="form-control" 
+                                      placeholder="Describe your event in detail..."
+                                      rows="5"
+                                      required></textarea>
+                            <small class="form-hint">Provide a comprehensive description to attract attendees</small>
+                        </div>
+                    </div>
+
+                    <div class="form-section-group">
+                        <h3 class="form-section-title">📍 Location & Pricing</h3>
+                        
+                        <div class="form-group">
+                            <label for="location">Venue / Location *</label>
+                            <input type="text" 
+                                   id="location" 
+                                   name="location" 
+                                   class="form-control" 
+                                   placeholder="e.g., Grand Convention Center, Jakarta"
+                                   required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="price">Ticket Price (Rp) *</label>
+                            <input type="number" 
+                                   id="price" 
+                                   name="price" 
+                                   class="form-control" 
+                                   placeholder="0 for free events"
+                                   min="0"
+                                   required>
+                            <small class="form-hint">Enter 0 if the event is free</small>
+                        </div>
+                    </div>
+
+                    <div class="form-section-group">
+                        <h3 class="form-section-title">🖼️ Event Image</h3>
+                        
+                        <div class="form-group">
+                            <label for="image">Image URL</label>
+                            <input type="url" 
+                                   id="image" 
+                                   name="image" 
+                                   class="form-control" 
+                                   placeholder="https://example.com/event-image.jpg">
+                            <small class="form-hint">
+                                Use a high-quality image URL from Unsplash, Pexels, or your own hosting
+                            </small>
+                        </div>
+                    </div>
+
+                    <div class="form-actions-modern">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span>💾</span>
+                            Save Event
+                        </button>
+                        <a href="dashboard.html" class="btn btn-outline btn-large">
+                            Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-wide">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🎯</span>
+                        <h3>D-EVENT</h3>
+                    </div>
+                    <p>Your trusted event management platform</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🦅</a>
+                        <a href="#" class="social-link">💼</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <a href="index.html">Home</a>
+                        <a href="event-list.html">Browse Events</a>
+                        <a href="event-form.html">Create Event</a>
+                        <a href="dashboard.html">Dashboard</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Press Kit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 D-EVENT. All rights reserved. | Final Project RPL</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/form.js"></script>
+
+    <!-- Initialize page loaded state -->
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

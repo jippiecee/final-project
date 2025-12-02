@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrations - D-EVENT</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/registration.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/micro-interactions.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container-wide">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="logo-icon">🎯</span>
+                    <h1>D-EVENT</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="event-list.html" class="nav-link">Events</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="registrations.html" class="nav-link active">Registrations</a></li>
+                    <li><a href="event-form.html" class="btn-nav">+ Create Event</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container-wide">
+            <div class="page-header-content">
+                <h1 class="page-title">Event Registrations</h1>
+                <p class="page-subtitle">Monitor and manage all event registrations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="dashboard-section">
+        <div class="container-wide">
+            <!-- Statistics -->
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-card-icon">📋</div>
+                    <div class="stat-card-value" id="totalRegistrations">0</div>
+                    <div class="stat-card-label">Total Registrations</div>
+                </div>
+                <div class="stat-card stat-card-secondary">
+                    <div class="stat-card-icon">🎫</div>
+                    <div class="stat-card-value" id="totalTickets">0</div>
+                    <div class="stat-card-label">Total Tickets Sold</div>
+                </div>
+                <div class="stat-card stat-card-success">
+                    <div class="stat-card-icon">💰</div>
+                    <div class="stat-card-value" id="totalRevenue">Rp 0</div>
+                    <div class="stat-card-label">Total Revenue</div>
+                </div>
+            </div>
+
+            <!-- Registrations Table -->
+            <div class="registrations-container">
+                <div class="table-wrapper">
+                    <table class="registrations-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Event</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th>Tickets</th>
+                                <th>Total</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="registrationsBody">
+                            <!-- Data loaded by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <div class="empty-icon">📋</div>
+                <h3>No Registrations Yet</h3>
+                <p>No one has registered for events yet</p>
+                <a href="event-list.html" class="btn btn-primary btn-large" style="margin-top: 2rem;">
+                    Browse Events
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-wide">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🎯</span>
+                        <h3>D-EVENT</h3>
+                    </div>
+                    <p>Your trusted event management platform</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">💼</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <a href="index.html">Home</a>
+                        <a href="event-list.html">Browse Events</a>
+                        <a href="event-form.html">Create Event</a>
+                        <a href="dashboard.html">Dashboard</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Press Kit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 D-EVENT. All rights reserved. | Final Project RPL</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/registrations-list.js"></script>
+    <script src="js/scroll-animation.js"></script>
+
+    <!-- Initialize page loaded state -->
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

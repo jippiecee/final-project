@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Event - D-EVENT</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/event-register.css">
+</head>
+<body class="loading">
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container-wide">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="logo-icon">🎯</span>
+                    <h1>D-EVENT</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="event-list.html" class="nav-link">Events</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="registrations.html" class="nav-link">Registrations</a></li>
+                    <li><a href="event-form.html" class="btn-nav">+ Create Event</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Event Info Banner -->
+    <section class="register-banner">
+        <div class="container-wide">
+            <div class="banner-content">
+                <span class="event-category-badge" id="eventCategory">Loading...</span>
+                <h1 class="banner-title" id="eventTitle">Loading Event...</h1>
+                <div class="banner-meta">
+                    <div class="banner-meta-item">
+                        <span>📅</span>
+                        <span id="eventDate">-</span>
+                    </div>
+                    <div class="banner-meta-item">
+                        <span>📍</span>
+                        <span id="eventLocation">-</span>
+                    </div>
+                    <div class="banner-meta-item">
+                        <span>💰</span>
+                        <span id="eventPrice">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container-modern">
+                <h2 class="section-heading" style="margin-bottom: 0.5rem;">📝 Registration Form</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">Complete your information to register for this event</p>
+                
+                <form id="registrationForm">
+                    <div class="form-section-group">
+                        <h3 class="form-section-title">👤 Personal Information</h3>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name *</label>
+                                <input type="text" 
+                                       id="fullName" 
+                                       name="fullName" 
+                                       class="form-control" 
+                                       placeholder="e.g., John Doe"
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" 
+                                       id="email" 
+                                       name="email" 
+                                       class="form-control" 
+                                       placeholder="your@email.com"
+                                       required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" 
+                                       id="phone" 
+                                       name="phone" 
+                                       class="form-control" 
+                                       placeholder="08123456789"
+                                       required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ticketQty">Number of Tickets *</label>
+                                <input type="number" 
+                                       id="ticketQty" 
+                                       name="ticketQty" 
+                                       class="form-control" 
+                                       placeholder="1"
+                                       min="1"
+                                       max="10"
+                                       value="1"
+                                       required>
+                                <small class="form-hint">Maximum 10 tickets per registration</small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <textarea id="address" 
+                                      name="address" 
+                                      class="form-control" 
+                                      placeholder="Your complete address"
+                                      rows="3"
+                                      required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notes">Notes (Optional)</label>
+                            <textarea id="notes" 
+                                      name="notes" 
+                                      class="form-control" 
+                                      placeholder="Any special requests or messages"
+                                      rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Summary Section -->
+                    <div class="registration-summary">
+                        <h3>📊 Registration Summary</h3>
+                        <div class="summary-row">
+                            <span>Price per Ticket:</span>
+                            <span id="pricePerTicket">Rp 0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Number of Tickets:</span>
+                            <span id="totalTickets">1</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total Payment:</span>
+                            <span id="totalPrice">Rp 0</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions-modern">
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span>✓</span>
+                            Complete Registration
+                        </button>
+                        <a href="javascript:history.back()" class="btn btn-outline btn-large">
+                            Cancel
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-wide">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🎯</span>
+                        <h3>D-EVENT</h3>
+                    </div>
+                    <p>Your trusted event management platform</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">💼</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <a href="index.html">Home</a>
+                        <a href="event-list.html">Browse Events</a>
+                        <a href="event-form.html">Create Event</a>
+                        <a href="dashboard.html">Dashboard</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Press Kit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 D-EVENT. All rights reserved. | Final Project RPL</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/constants.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/scroll-animation.js"></script>
+
+    <!-- Initialize page loaded state -->
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

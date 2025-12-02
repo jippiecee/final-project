@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Events - D-EVENT</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/micro-interactions.css">
+</head>
+<body class="loading">
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container-wide">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="logo-icon">🎯</span>
+                    <h1>D-EVENT</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="event-list.html" class="nav-link active">Events</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="registrations.html" class="nav-link">Registrations</a></li>
+                    <li><a href="event-form.html" class="btn-nav">+ Create Event</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container-wide">
+            <div class="page-header-content">
+                <h1 class="page-title">Browse Events</h1>
+                <p class="page-subtitle">Discover amazing events happening around you</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filter Section -->
+    <section class="search-section">
+        <div class="container-wide">
+            <div class="search-container">
+                <div class="search-box-wrapper">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" 
+                           id="searchInput" 
+                           class="search-input" 
+                           placeholder="Search events by name, location, or category...">
+                </div>
+                
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">
+                        <span class="filter-icon">🎯</span>
+                        All Events
+                    </button>
+                    <button class="filter-btn" data-category="Conference">
+                        <span class="filter-icon">💼</span>
+                        Conference
+                    </button>
+                    <button class="filter-btn" data-category="Workshop">
+                        <span class="filter-icon">🛠️</span>
+                        Workshop
+                    </button>
+                    <button class="filter-btn" data-category="Concert">
+                        <span class="filter-icon">🎵</span>
+                        Concert
+                    </button>
+                    <button class="filter-btn" data-category="Festival">
+                        <span class="filter-icon">🎪</span>
+                        Festival
+                    </button>
+                    <button class="filter-btn" data-category="Seminar">
+                        <span class="filter-icon">📚</span>
+                        Seminar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events List Section -->
+    <section class="events-list-section">
+        <div class="container-wide">
+            <div class="results-header">
+                <div class="results-count" id="resultsCount">Loading events...</div>
+                <div class="sort-dropdown">
+                    <select id="sortSelect" class="sort-select">
+                        <option value="date-asc">Date: Earliest First</option>
+                        <option value="date-desc">Date: Latest First</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="name-asc">Name: A to Z</option>
+                        <option value="name-desc">Name: Z to A</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Events Grid -->
+            <div class="events-grid" id="eventsList">
+                <!-- Events loaded by JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="empty-state" style="display: none;">
+                <div class="empty-icon">📋</div>
+                <h3>No Events Found</h3>
+                <p>Try different search terms or browse all events</p>
+                <a href="event-list.html" class="btn btn-primary btn-large" style="margin-top: 2rem;">
+                    Clear Filters
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-wide">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🎯</span>
+                        <h3>D-EVENT</h3>
+                    </div>
+                    <p>Your trusted event management platform</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">💼</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <a href="index.html">Home</a>
+                        <a href="event-list.html">Browse Events</a>
+                        <a href="event-form.html">Create Event</a>
+                        <a href="dashboard.html">Dashboard</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <a href="#">About Us</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Press Kit</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 D-EVENT. All rights reserved. | Final Project RPL</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/constants.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/list.js"></script>
+    <script src="js/scroll-animation.js"></script>
+
+    <!-- Initialize page loaded state -->
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

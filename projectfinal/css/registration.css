@@ -1,0 +1,68 @@
+/* ==========================================
+   REGISTRATION.CSS - Styles for Registrations Page
+   ========================================== */
+
+.registrations-container {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    margin-top: 2rem;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.registrations-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.registrations-table thead {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.registrations-table th {
+    padding: 1.5rem 1.25rem;
+    text-align: left;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--white);
+}
+
+.registrations-table td {
+    padding: 1.5rem 1.25rem;
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.registrations-table tbody tr {
+    transition: var(--transition);
+}
+
+.registrations-table tbody tr:hover {
+    background: var(--gray-50);
+}
+
+.registrations-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Responsive Table */
+@media (max-width: 1024px) {
+    .registrations-table {
+        min-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .registrations-table th,
+    .registrations-table td {
+        padding: 1rem 0.75rem;
+        font-size: 0.875rem;
+    }
+}
