@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Method - D-EVENT</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/event-register.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="loading">
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container-wide">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="logo-icon">🎯</span>
+                    <h1>D-EVENT</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="event-list.html" class="nav-link">Events</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="registrations.html" class="nav-link">Registrations</a></li>
+                    <li><a href="event-form.html" class="btn-nav">+ Create Event</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Payment Header -->
+    <section class="register-banner">
+        <div class="container-wide">
+            <div class="banner-content">
+                <span class="event-category-badge">💳 PAYMENT</span>
+                <h1 class="banner-title">Select Payment Method</h1>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem; margin-top: 1rem;">
+                    Choose your preferred e-wallet to complete payment
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Selection -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container-modern">
+                <!-- Registration Summary -->
+                <div class="registration-summary" style="margin-bottom: 2rem;">
+                    <h3>📋 Registration Summary</h3>
+                    <div class="summary-row">
+                        <span>Event:</span>
+                        <span id="summaryEventTitle">-</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Participant:</span>
+                        <span id="summaryName">-</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Email:</span>
+                        <span id="summaryEmail">-</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Number of Tickets:</span>
+                        <span id="summaryTickets">-</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total Payment:</span>
+                        <span id="summaryTotal">Rp 0</span>
+                    </div>
+                </div>
+
+                <!-- Payment Methods -->
+                <div class="form-section-group">
+                    <h3 class="form-section-title">💰 Select Payment Method</h3>
+                    
+                    <div class="payment-methods">
+                        <!-- DANA -->
+                        <div class="payment-method-card" data-method="dana" onclick="selectPaymentMethod('dana')">
+                            <div class="payment-method-icon">
+                                <span style="font-size: 3rem;">💙</span>
+                            </div>
+                            <div class="payment-method-info">
+                                <h4>DANA</h4>
+                                <p>Pay instantly with DANA</p>
+                            </div>
+                            <div class="payment-method-check">
+                                <span class="check-icon">✓</span>
+                            </div>
+                        </div>
+
+                        <!-- GOPAY -->
+                        <div class="payment-method-card" data-method="gopay" onclick="selectPaymentMethod('gopay')">
+                            <div class="payment-method-icon">
+                                <span style="font-size: 3rem;">💚</span>
+                            </div>
+                            <div class="payment-method-info">
+                                <h4>GoPay</h4>
+                                <p>Pay instantly with GoPay</p>
+                            </div>
+                            <div class="payment-method-check">
+                                <span class="check-icon">✓</span>
+                            </div>
+                        </div>
+
+                        <!-- SHOPEEPAY -->
+                        <div class="payment-method-card" data-method="shopeepay" onclick="selectPaymentMethod('shopeepay')">
+                            <div class="payment-method-icon">
+                                <span style="font-size: 3rem;">🧡</span>
+                            </div>
+                            <div class="payment-method-info">
+                                <h4>ShopeePay</h4>
+                                <p>Pay instantly with ShopeePay</p>
+                            </div>
+                            <div class="payment-method-check">
+                                <span class="check-icon">✓</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions-modern">
+                    <button id="proceedBtn" class="btn btn-primary btn-large" disabled onclick="proceedToPayment()">
+                        <span>💳</span>
+                        Proceed to Payment
+                    </button>
+                    <a href="javascript:history.back()" class="btn btn-outline btn-large">
+                        ← Back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-wide">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🎯</span>
+                        <h3>D-EVENT</h3>
+                    </div>
+                    <p>Your trusted event management platform</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 D-EVENT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/payment-selection.js"></script>
+
+    <style>
+        .payment-methods {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .payment-method-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border: 3px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .payment-method-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .payment-method-card.selected {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(124, 58, 237, 0.05));
+            box-shadow: var(--shadow-colored);
+        }
+
+        .payment-method-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+        }
+
+        .payment-method-info {
+            flex: 1;
+        }
+
+        .payment-method-info h4 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .payment-method-info p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .payment-method-check {
+            width: 32px;
+            height: 32px;
+            border: 3px solid var(--gray-300);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .payment-method-card.selected .payment-method-check {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .check-icon {
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .payment-method-card.selected .check-icon {
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .payment-method-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .payment-method-icon {
+                width: 100%;
+                height: 100px;
+            }
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>

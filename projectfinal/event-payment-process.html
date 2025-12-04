@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Process - D-EVENT</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/event-register.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body class="loading">
+    <!-- Header & Navigation -->
+    <header class="header">
+        <div class="container-wide">
+            <nav class="navbar">
+                <div class="logo">
+                    <span class="logo-icon">🎯</span>
+                    <h1>D-EVENT</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="event-list.html" class="nav-link">Events</a></li>
+                    <li><a href="dashboard.html" class="nav-link">Dashboard</a></li>
+                    <li><a href="registrations.html" class="nav-link">Registrations</a></li>
+                    <li><a href="event-form.html" class="btn-nav">+ Create Event</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Payment Instructions Header -->
+    <section class="register-banner">
+        <div class="container-wide">
+            <div class="banner-content">
+                <span class="event-category-badge" id="paymentMethodBadge">💳 PAYMENT</span>
+                <h1 class="banner-title">Complete Your Payment</h1>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.125rem; margin-top: 1rem;">
+                    Follow the instructions below to complete payment
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Instructions -->
+    <section class="form-section">
+        <div class="container">
+            <div class="form-container-modern">
+                <!-- Payment Summary -->
+                <div class="registration-summary" style="margin-bottom: 2rem;">
+                    <h3>💰 Payment Amount</h3>
+                    <div class="summary-row total" style="margin-top: 0;">
+                        <span>Total to Pay:</span>
+                        <span id="paymentTotal" style="font-size: 2.5rem;">Rp 0</span>
+                    </div>
+                </div>
+
+                <!-- Instructions -->
+                <div class="form-section-group">
+                    <h3 class="form-section-title">📱 Payment Instructions</h3>
+                    
+                    <div class="payment-instructions-box">
+                        <div class="instruction-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Open Your <span id="walletName">E-Wallet</span> App</h4>
+                                <p>Launch the <span id="walletName2">e-wallet</span> application on your phone</p>
+                            </div>
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Send Money to This Number</h4>
+                                <div class="phone-number-box">
+                                    <span class="phone-number">082261628284</span>
+                                    <button onclick="copyPhoneNumber()" class="btn-copy">
+                                        📋 Copy
+                                    </button>
+                                </div>
+                                <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                                    Account Name: <strong>D-EVENT Official</strong>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Enter the Exact Amount</h4>
+                                <div class="amount-box">
+                                    <span id="exactAmount">Rp 0</span>
+                                    <button onclick="copyAmount()" class="btn-copy">
+                                        📋 Copy
+                                    </button>
+                                </div>
+                                <p style="color: #EF4444; font-weight: 600; margin-top: 0.5rem;">
+                                    ⚠️ Transfer exact amount including any additional digits for verification
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="instruction-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Confirm Payment Below</h4>
+                                <p>After successful transfer, click the button below to confirm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Important Notes -->
+                <div class="alert-box" style="background: #FEF3C7; border: 2px solid #F59E0B; border-radius: var(--radius-lg); padding: 1.5rem; margin-top: 2rem;">
+                    <h4 style="color: #92400E; margin-bottom: 1rem; font-size: 1.125rem;">
+                        ⚠️ Important Notes:
+                    </h4>
+                    <ul style="color: #78350F; line-height: 1.8; padding-left: 1.5rem;">
+                        <li>Payment must be completed within <strong>24 hours</strong></li>
+                        <li>Send to the <strong>exact phone number</strong> shown above</li>
+                        <li>Transfer the <strong>exact amount</strong> for faster verification</li>
+                        <li>Keep your payment receipt for reference</li>
+                        <li>Contact support if you encounter any issues</li>
+                    </ul>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="form-actions-modern" style="margin-top: 2rem;">
+                    <button onclick="confirmPayment()" class="btn btn-success btn-large" style="background: #10B981;">
+                        <span>✓</span>
+                        I Have Completed Payment
+                    </button>
+                    <a href="javascript:history.back()" class="btn btn-outline btn-large">
+                        ← Change Payment Method
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container-wide">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">🎯</span>
+                        <h3>D-EVENT</h3>
+                    </div>
+                    <p>Your trusted event management platform</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 D-EVENT. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/storage.js"></script>
+    <script src="js/payment-process.js"></script>
+
+    <style>
+        .payment-instructions-box {
+            background: var(--gray-50);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+        }
+
+        .instruction-step {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--gray-200);
+        }
+
+        .instruction-step:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h4 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .phone-number-box,
+        .amount-box {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--white);
+            padding: 1.25rem 1.5rem;
+            border-radius: var(--radius);
+            border: 2px solid var(--primary);
+            margin-top: 1rem;
+        }
+
+        .phone-number,
+        .amount-box span {
+            flex: 1;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
+
+        .btn-copy {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-copy:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .instruction-step {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .step-number {
+                margin: 0 auto;
+            }
+
+            .phone-number-box,
+            .amount-box {
+                flex-direction: column;
+            }
+
+            .phone-number,
+            .amount-box span {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        });
+    </script>
+</body>
+</html>
